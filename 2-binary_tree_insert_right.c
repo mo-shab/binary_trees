@@ -1,7 +1,7 @@
 #include "binary_trees.h"
 
 /**
-* binary_tree_insert_Right - function that insert node at right.
+* binary_tree_insert_right - function that insert node at right.
 * @parent: The parent of the tree.
 * @value: The value of the node.
 *
