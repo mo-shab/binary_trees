@@ -4,7 +4,7 @@
  * binary_tree_node - Function that create a new tree node.
  * @parent: The Parent of the node to create.
  * @value: The value of the node to create.
- * 
+ *
  * Return: The new node created.
 */
 
