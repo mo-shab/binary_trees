@@ -8,26 +8,15 @@
 */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
+	int left = 0, right = 0;
+
 	if (tree == NULL)
 		return (0);
 
-return (findMax(binary_tree_height(tree->left),
-	binary_tree_height(tree->right)) + 1);
+	if (tree->left)
+		left = 1 + binary_tree_height(tree->left);
+	if (tree->right)
+		right = 1 + binary_tree_height(tree->right);
 
-}
-
-/**
-* findMax - function that return max of two int
-* @a: The first int;
-* @b: The second int;
-*
-* Return: The max.
-*/
-
-size_t findMax(size_t a, size_t b)
-{
-	if (a >= b)
-		return (a);
-	else
-		return (b);
+	return ((left > right) ? left : right);
 }
