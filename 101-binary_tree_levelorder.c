@@ -22,6 +22,18 @@ size_t binary_tree_height_c(const binary_tree_t *tree)
 	return ((left > right) ? left : right);
 }
 
+/**
+* binary_tree_size - Measure the size (number of nodes) of a binary tree.
+* @tree: The binary tree.
+* Return: The size of the tree.
+*/
+size_t binary_tree_size(const binary_tree_t *tree)
+{
+	if (tree == NULL)
+		return (0);
+
+	return (1 + binary_tree_size(tree->left) + binary_tree_size(tree->right));
+}
 
 /**
 * binary_tree_levelorder - function that goes
@@ -60,17 +72,4 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 			queue[rear++] = temp_node->right;
 	}
 	free(queue);
-}
-
-/**
-* binary_tree_size - Measure the size (number of nodes) of a binary tree.
-* @tree: The binary tree.
-* Return: The size of the tree.
-*/
-size_t binary_tree_size(const binary_tree_t *tree)
-{
-	if (tree == NULL)
-		return (0);
-
-	return (1 + binary_tree_size(tree->left) + binary_tree_size(tree->right));
 }
